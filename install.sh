@@ -13,14 +13,11 @@ sudo apt-get install zsh -y
 sudo apt-get remove -y chromium-bsu chromium-bsu-data
 sudo apt-get autoremove -y
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-wget --content-disposition https://update.code.visualstudio.com/latest/linux-deb-x64/stable 
-sudo dpkg -i ~/Downloads/*.deb
+git config --global user.name ${USER} && git config --global user.email "${USER}@gmail.com"
 
-# Setup ZSH https://ohmyz.sh/
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" &
-
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# wget --content-disposition https://update.code.visualstudio.com/latest/linux-deb-x64/stable 
+# sudo dpkg -i ~/Downloads/*.deb
 
 # Setup NVM https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -29,5 +26,6 @@ source ~/.bashrc
 nvm install 'lts/*'
 npm install -g yarn prettier sort-package-json
 
-
-git config --global user.name osdevisnot && git config --global user.email "osdevisnot@gmail.com"
+# Setup ZSH https://ohmyz.sh/
+chsh -s $(which zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
