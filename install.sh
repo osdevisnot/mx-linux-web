@@ -15,7 +15,7 @@ sudo apt-get autoremove -y
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget --content-disposition https://update.code.visualstudio.com/latest/linux-deb-x64/stable 
-sudo dpkg -i google-chrome-stable_current_amd64.deb code_.*.deb
+sudo dpkg -i ~/Downloads/*.deb
 
 # Setup ZSH https://ohmyz.sh/
 chsh -s $(which zsh)
