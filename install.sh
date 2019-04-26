@@ -22,7 +22,7 @@ git config --global user.name ${USER} && git config --global user.email "${USER}
 # Setup NVM https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
-source ~/.bashrc
+. ~/.bashrc
 nvm install 'lts/*'
 npm install -g yarn prettier sort-package-json
 
