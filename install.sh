@@ -22,10 +22,16 @@ git config --global user.name ${USER} && git config --global user.email "${USER}
 # Setup NVM https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
-. ~/.bashrc
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 nvm install 'lts/*'
 npm install -g yarn prettier sort-package-json
 
+tail -4 ~/.bashrc >> ~/.zshrc
+
 # Setup ZSH https://ohmyz.sh/
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s $(which zsh)
